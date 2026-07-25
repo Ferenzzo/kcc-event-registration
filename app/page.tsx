@@ -23,25 +23,34 @@ export default function Home() {
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
 
         {/* Logo */}
-        <div className="mb-6 flex justify-center">
-          <Image
-            src="/Maven_LOGO.jpg"
-            alt="Event Logo"
-            width={120}
-            height={120}
-            className="object-contain"
-            priority
-          />
-        </div>
+              <div className="mb-6 flex w-full items-center justify-center">
+        {/* Left Logo */}
+        <Image
+          src="/MinTVET.jpg"
+          alt="Maven Logo"
+          width={100}
+          height={100}
+          className="h-24 w-24 object-contain"
+          priority
+        />
 
+        {/* Right Logo */}
+        <Image
+          src="/TVET.jpg"
+          alt="Second Logo"
+          width={100}
+          height={100}
+          className="h-24 w-24 object-contain"
+        />
+      </div>
         {/* Event Information */}
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-slate-900">
-            Event Registration
+            25th HRSD Conference Registration
           </h1>
 
           <p className="mt-2 font-medium text-blue-700">
-            July 30–31, 2026
+            September 10-11, 2026
           </p>
 
           <p className="mt-1 text-sm text-gray-500">
@@ -49,29 +58,11 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Username */}
-        <label className="mb-2 block font-semibold text-gray-800">
-          Username
-        </label>
-
-        <input
-          type="text"
-          placeholder="Enter your username"
-          className="mb-4 w-full rounded-lg border border-gray-300 p-3 text-gray-900 focus:border-blue-600 focus:outline-none"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              continueToRegistration();
-            }
-          }}
-        />
-
         <button
-          onClick={continueToRegistration}
+          onClick={() => router.push("/register")}
           className="w-full rounded-lg bg-blue-700 p-3 font-semibold text-white hover:bg-blue-800"
         >
-          Continue to Registration
+          Register Now
         </button>
 
         {/* Dashboard */}

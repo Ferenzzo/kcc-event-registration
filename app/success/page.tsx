@@ -6,10 +6,6 @@ export default function SuccessPage() {
   const router = useRouter();
 
   function registerAnother() {
-    // Remove the previous user's username
-    localStorage.removeItem("username");
-
-    // Return to the home page
     router.push("/");
   }
 
