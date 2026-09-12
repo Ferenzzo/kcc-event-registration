@@ -26,7 +26,7 @@ export default function Home() {
               <div className="mb-6 flex w-full items-center justify-center">
         {/* Left Logo */}
         <Image
-          src="/Maven_LOGO.jpg"
+          src="/dti.png"
           alt="Maven Logo"
           width={100}
           height={100}
@@ -34,14 +34,14 @@ export default function Home() {
           priority
         />
 
-        {/* Right Logo
+        
         <Image
-          src="/TVET.jpg"
+          src="/Maven_LOGO.jpg"
           alt="Second Logo"
           width={100}
           height={100}
           className="h-24 w-24 object-contain"
-        /> */}
+        />
       </div>
         {/* Event Information */}
         <div className="mb-8 text-center">
