@@ -26,7 +26,7 @@ export default function Home() {
               <div className="mb-6 flex w-full items-center justify-center">
         {/* Left Logo */}
         <Image
-          src="/MinTVET.jpg"
+          src="/Maven_LOGO.jpg"
           alt="Maven Logo"
           width={100}
           height={100}
@@ -34,23 +34,23 @@ export default function Home() {
           priority
         />
 
-        {/* Right Logo */}
+        {/* Right Logo
         <Image
           src="/TVET.jpg"
           alt="Second Logo"
           width={100}
           height={100}
           className="h-24 w-24 object-contain"
-        />
+        /> */}
       </div>
         {/* Event Information */}
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-slate-900">
-            25th HRSD Conference Registration
+            Registration
           </h1>
 
           <p className="mt-2 font-medium text-blue-700">
-            September 10-11, 2026
+            September 18-19, 2026
           </p>
 
           <p className="mt-1 text-sm text-gray-500">
