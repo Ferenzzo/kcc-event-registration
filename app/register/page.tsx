@@ -12,6 +12,7 @@ export default function RegisterPage() {
     fullname: "",
     age: "",
     sex: "",
+    gradeLevel: "",
     school: "",
     adviser: "",
   });
@@ -33,6 +34,7 @@ export default function RegisterPage() {
       !form.fullname.trim() ||
       !form.age.trim() ||
       !form.sex ||
+      !form.gradeLevel ||
       !form.school.trim() ||
       !form.adviser.trim()
     ) {
@@ -53,6 +55,7 @@ export default function RegisterPage() {
           fullname: form.fullname,
           age: form.age,
           sex: form.sex,
+          gradeLevel: form.gradeLevel,
           school: form.school,
           adviser: form.adviser,
         }),
@@ -171,6 +174,25 @@ export default function RegisterPage() {
               <option value="">Select</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
+            </select>
+          </div>
+
+          {/* Grade Level */}
+          <div>
+            <label className="mb-2 block font-semibold text-gray-800">
+              Grade Level *
+            </label>
+
+            <select
+              name="gradeLevel"
+              value={form.gradeLevel}
+              onChange={handleChange}
+              className="w-full rounded-lg border border-gray-300 p-3 text-gray-900 focus:border-blue-600 focus:outline-none"
+            >
+              <option value="">Select Grade Level</option>
+              <option value="Grade 11">Grade 11</option>
+              <option value="Grade 12">Grade 12</option>
+              <option value="Other Grade Level">Other Grade Level</option>
             </select>
           </div>
 
