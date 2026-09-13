@@ -17,6 +17,7 @@ export default function RegisterPage() {
     adviser: "",
   });
 
+  const [otherGradeLevel, setOtherGradeLevel] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
   function handleChange(
@@ -28,13 +29,33 @@ export default function RegisterPage() {
     });
   }
 
+  function handleGradeLevelChange(
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) {
+    const value = e.target.value;
+
+    setForm({
+      ...form,
+      gradeLevel: value,
+    });
+
+    if (value !== "Other") {
+      setOtherGradeLevel("");
+    }
+  }
+
   async function register() {
+    const finalGradeLevel =
+      form.gradeLevel === "Other"
+        ? otherGradeLevel.trim()
+        : form.gradeLevel;
+
     if (
       !form.email.trim() ||
       !form.fullname.trim() ||
       !form.age.trim() ||
       !form.sex ||
-      !form.gradeLevel ||
+      !finalGradeLevel ||
       !form.school.trim() ||
       !form.adviser.trim()
     ) {
@@ -55,7 +76,7 @@ export default function RegisterPage() {
           fullname: form.fullname,
           age: form.age,
           sex: form.sex,
-          gradeLevel: form.gradeLevel,
+          gradeLevel: finalGradeLevel,
           school: form.school,
           adviser: form.adviser,
         }),
@@ -186,14 +207,24 @@ export default function RegisterPage() {
             <select
               name="gradeLevel"
               value={form.gradeLevel}
-              onChange={handleChange}
+              onChange={handleGradeLevelChange}
               className="w-full rounded-lg border border-gray-300 p-3 text-gray-900 focus:border-blue-600 focus:outline-none"
             >
               <option value="">Select Grade Level</option>
               <option value="Grade 11">Grade 11</option>
               <option value="Grade 12">Grade 12</option>
-              <option value="Other Grade Level">Other Grade Level</option>
+              <option value="Other">Other</option>
             </select>
+
+            {form.gradeLevel === "Other" && (
+              <input
+                type="text"
+                value={otherGradeLevel}
+                onChange={(e) => setOtherGradeLevel(e.target.value)}
+                placeholder="Enter your grade level"
+                className="mt-3 w-full rounded-lg border border-gray-300 p-3 text-gray-900 placeholder:text-gray-400 focus:border-blue-600 focus:outline-none"
+              />
+            )}
           </div>
 
           {/* School */}
