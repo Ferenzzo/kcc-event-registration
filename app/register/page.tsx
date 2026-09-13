@@ -86,7 +86,7 @@ export default function RegisterPage() {
 
           {/* Event Banner */}
           <Image
-            src="/MMA_banner.png"
+            src="/banner.png"
             alt="Event Banner"
             width={1200}
             height={300}
